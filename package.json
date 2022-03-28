@@ -1,10 +1,16 @@
 {
   "name": "mini-vue",
+  "sideEffects": false,
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "http-server dist",
+    "serve": "webpack-dev-server --config webpack/webpack.dev.js",
+    "build": "webpack --config webpack/webpack.prod.js",
+    "dev": "webpack --config webpack/webpack.dev.js",
+    "build:dll": "webpack --config webpack/webpack.dll.js"
   },
   "repository": {
     "type": "git",
@@ -16,5 +22,41 @@
   "bugs": {
     "url": "https://github.com/H-newborn/mini-vue/issues"
   },
-  "homepage": "https://github.com/H-newborn/mini-vue#readme"
+  "homepage": "https://github.com/H-newborn/mini-vue#readme",
+  "dependencies": {
+    "@babel/core": "^7.17.8",
+    "@babel/polyfill": "^7.12.1",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/runtime": "^7.17.8",
+    "babel-loader": "^8.2.3"
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-runtime": "^7.17.0",
+    "add-asset-html-webpack-plugin": "^5.0.1",
+    "autoprefixer": "^10.4.4",
+    "clean-webpack-plugin": "^4.0.0",
+    "css-loader": "^6.7.1",
+    "eslint": "^8.12.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-loader": "^4.0.2",
+    "eslint-plugin-import": "^2.25.4",
+    "file-loader": "^6.2.0",
+    "html-docx-js": "^0.3.1",
+    "html-webpack-plugin": "^5.5.0",
+    "http-server": "^14.1.0",
+    "less": "^4.1.2",
+    "less-loader": "^10.2.0",
+    "lodash": "^4.17.21",
+    "mini-css-extract-plugin": "^2.6.0",
+    "optimize-css-assets-webpack-plugin": "^6.0.1",
+    "postcss-loader": "^6.2.1",
+    "style-loader": "^3.3.1",
+    "terser-webpack-plugin": "^5.3.1",
+    "url-loader": "^4.1.1",
+    "webpack": "^5.70.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.7.4",
+    "webpack-merge": "^5.8.0",
+    "workbox-webpack-plugin": "^6.5.1"
+  }
 }

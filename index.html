@@ -8,43 +8,44 @@
 </head>
 <body>
   <div>响应式原理</div>
-  <!-- <h1 id="name">{{name}}</h1> -->
+  <h1 id="name">{{name}}</h1>
   <div id="app">
     <div v-on:click="asd">{{name}}</div>
     <div>{{title}}</div>
     <div>{{um}}</div>
   </div>
-  <button id="btn">click</button>
-  <script type="text/javascript" src="./Dep.js"></script>
-  <script type="text/javascript" src="./observe.js"></script>
-  <script type="text/javascript" src="./Watcher.js"></script>
-  <script type="text/javascript" src="./compiler.js"></script>
-  <script type="text/javascript" src="./SelfVue.js"></script>
-  <script>
-     let ele = document.querySelector('#name');
+  <img src="./src/img/1.png" alt="">
+  <img src="./src/img/2.jpeg" alt="">
+  <!-- <script type="module" src="./src/index.js" defer></script> -->
 
-     let selfVue = new SelfVue({
-        el: '#app',
-        data: {
-          title: 'aaa',
-          name: 'bbb',
-          um: '123'
-        },
-        methods: {
-          asd() {
-            console.log(123);
-          }
-        }
-      });
+<!-- <div id="pdfDom">123</div> -->
+<!-- <script type="text/javascript" src="./FileSaver.js"></script> -->
+<!-- <script type="text/javascript" src="./html-docx.js"></script> -->
+<!-- <script type="text/javascript">
+getOutword('pdfDom', '12322')
+function getOutword (id, fileName) {
+  console.log(1233);
+  /*  id ：文档dom节点 fileName：文件名称(.doc) */
+  var header = "<html xmlns:o='urn:schemas-microsoft-com:office:office' " +
+    "xmlns:w='urn:schemas-microsoft-com:office:word' " +
+    "xmlns='http://www.w3.org/TR/REC-html40'>" +
+    "<head><meta charset='utf-8'><title>Export HTML to Word Document with JavaScript</title></head><body>"
+  var footer = '</body></html>'
+  var sourceHTML = header + document.getElementById(id).innerHTML + footer
  
-     console.log(selfVue);
+  var source = 'data:application/vnd.ms-word;charset=utf-8,' + encodeURIComponent(sourceHTML)
+  
+  
+  var fileDownload = document.createElement('a')
+  document.body.appendChild(fileDownload)
+  fileDownload.href = source
+  fileDownload.download = fileName // 下载名称
+  fileDownload.click()
+  document.body.removeChild(fileDownload)
+} -->
+ 
 
-     let btn = document.querySelector('#btn')
-      btn.addEventListener('click', function(el) {
-      console.log('name值改变了');
-      selfVue.name = Math.random();
-    })
 
-  </script>
+</script>
 </body>
 </html>
